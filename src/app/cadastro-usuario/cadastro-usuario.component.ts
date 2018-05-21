@@ -1,4 +1,4 @@
-import { teste } from './../../../../databing/src/app/data-binding/data-binding.component';
+
 
 import { Component, OnInit } from '@angular/core';
 export class mot {

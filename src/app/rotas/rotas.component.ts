@@ -1,4 +1,4 @@
-import { teste } from './../../../../databing/src/app/data-binding/data-binding.component';
+
 import { Routes } from '@angular/router';
 import { AgmDirectionModule } from 'agm-direction';
 //import { Routes } from '@angular/router';
