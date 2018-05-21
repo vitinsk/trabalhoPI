@@ -1,0 +1,15 @@
+#padrao{
+    margin-top: 20px; 
+    margin-left: 16.5%;
+    margin-right: 6%;
+    width: 95%;
+}
+
+#map{
+    height: 400px;
+    width: 200px;
+}
+
+agm-map{
+    height: 300px;
+}

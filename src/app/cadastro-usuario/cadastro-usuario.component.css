@@ -1,0 +1,11 @@
+#cadastro-motorista{
+    margin-top: 20px; 
+    margin-left: 16.5%;
+    margin-right: 5%;
+    width: 95%;
+}
+
+#noMessage, h4{
+    color : darkblue;
+    opacity: 0.4;
+}
