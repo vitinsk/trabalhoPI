@@ -44,7 +44,7 @@ import {DialogModule} from 'primeng/dialog';
     GMapModule,
     PaginatorModule,
     AgmCoreModule.forRoot({
-      apiKey: // colocar chave do maps API
+      apiKey: 'AIzaSyBFP36tQwX3Md60oPJ-cb6l8FcB_igPry8'
     }),
     AgmDirectionModule,
     DialogModule
