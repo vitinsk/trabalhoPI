@@ -43,7 +43,8 @@ export class CadastroUsuarioComponent implements OnInit {
     this.cols = [
       { field: 'nome', header: 'Nome' },
       { field: 'telefone', header: 'Telefone' },
-      { field: 'cpf', header: 'CPF' }
+      { field: 'cpf', header: 'CPF' },
+      
   ];
     
   }

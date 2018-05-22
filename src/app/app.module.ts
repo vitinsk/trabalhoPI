@@ -21,11 +21,13 @@ import {PaginatorModule} from 'primeng/paginator';
 import { AgmCoreModule } from '@agm/core';
 import { AgmDirectionModule } from 'agm-direction';
 import {DialogModule} from 'primeng/dialog';
+import { CadastroVeiculoComponent } from './cadastro-veiculo/cadastro-veiculo.component';
 @NgModule({
   declarations: [
     AppComponent,
     CadastroUsuarioComponent,
-    RotasComponent
+    RotasComponent,
+    CadastroVeiculoComponent
   ],
   imports: [
     BrowserModule,
