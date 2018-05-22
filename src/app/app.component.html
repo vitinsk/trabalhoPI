@@ -1,52 +1,50 @@
-
-
 <div class="nav-side-menu">
-  <div class="brand">Controle KM</div>
-  <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-      <div class="menu-list">
-          <ul id="menu-content" class="menu-content collapse out">
-              <li>
+    <div class="brand">Controle KM</div>
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+    <div class="menu-list">
+        <ul id="menu-content" class="menu-content collapse out">
+            <li>
                 <a href="#">
-                <i class="fa fa-dashboard fa-lg"></i> Início
+                    <i class="fa fa-dashboard fa-lg"></i> Início
                 </a>
-              </li>
+            </li>
 
-              <li  data-toggle="collapse" data-target="#products" class="collapsed">
+            <li data-toggle="collapse" data-target="#products" class="collapsed">
                 <a><i class="fa fa-gift fa-lg"></i> Cadastros <span class="arrow"></span></a>
-              </li>
-              <ul class="sub-menu collapse" id="products">
-                  <li><a routerLink="/veiculos">Veículos</a></li>
-                  <li><a routerLink="/usuario">Usuário</a></li>
-                  
-              </ul>
+            </li>
+            <ul class="sub-menu collapse" id="products">
+                <li><a routerLink="/veiculo">Veículos</a></li>
+                <li><a routerLink="/usuario">Usuário</a></li>
 
-              <li data-toggle="collapse" data-target="#service" class="collapsed">
+            </ul>
+
+            <li data-toggle="collapse" data-target="#service" class="collapsed">
                 <a href="#"><i class="fa fa-globe fa-lg"></i> Movimentação <span class="arrow"></span></a>
-              </li>  
-              <ul class="sub-menu collapse" id="service">
-              
-              </ul>
+            </li>
+            <ul class="sub-menu collapse" id="service">
+
+            </ul>
 
 
-              <li data-toggle="collapse" data-target="#new" class="collapsed">
+            <li data-toggle="collapse" data-target="#new" class="collapsed">
                 <a><i class="fa fa-car fa-lg"></i> Rotas <span class="arrow"></span></a>
-              </li>
-              <ul class="sub-menu collapse" id="new">
+            </li>
+            <ul class="sub-menu collapse" id="new">
                 <li><a routerLink="/rotas">Incluir</a></li>
-              </ul>
-               <li>
+            </ul>
+            <li>
                 <a href="#">
-                <i class="fa fa-user fa-lg"></i> Perfil
+                    <i class="fa fa-user fa-lg"></i> Perfil
                 </a>
-                </li>
-               <li>
+            </li>
+            <li>
                 <a href="#">
-                <i class="fa fa-users fa-lg"></i> Usuários
+                    <i class="fa fa-users fa-lg"></i> Usuários
                 </a>
-              </li>
-          </ul>
-   </div>
+            </li>
+        </ul>
+    </div>
 </div>
 <div class="container" id="muda">
-  <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
 </div>
