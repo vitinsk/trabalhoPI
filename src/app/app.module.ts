@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule} from '@angular/common/http';
 import {AccordionModule} from 'primeng/accordion';
+import {DataTableModule} from 'primeng/datatable';
 import {MenuItem} from 'primeng/api';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {InputTextModule} from 'primeng/inputtext';
@@ -22,6 +24,7 @@ import { AgmCoreModule } from '@agm/core';
 import { AgmDirectionModule } from 'agm-direction';
 import {DialogModule} from 'primeng/dialog';
 import { CadastroVeiculoComponent } from './cadastro-veiculo/cadastro-veiculo.component';
+import { FuncionarioService } from './funcionario.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +33,8 @@ import { CadastroVeiculoComponent } from './cadastro-veiculo/cadastro-veiculo.co
     CadastroVeiculoComponent
   ],
   imports: [
+    HttpClientModule,
+    DataTableModule,
     BrowserModule,
     AccordionModule,
     BrowserAnimationsModule,
@@ -51,7 +56,7 @@ import { CadastroVeiculoComponent } from './cadastro-veiculo/cadastro-veiculo.co
     AgmDirectionModule,
     DialogModule
   ],
-  providers: [],
+  providers: [FuncionarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

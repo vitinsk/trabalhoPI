@@ -1,6 +1,8 @@
 
 
 import { Component, OnInit } from '@angular/core';
+import { FuncionarioService } from '../funcionario.service';
+import { FormControl } from '@angular/forms';
 export class mot {
   nome : String;
   telefone : String;
@@ -11,35 +13,21 @@ export class mot {
   templateUrl: './cadastro-usuario.component.html',
   styleUrls: ['./cadastro-usuario.component.css']
 })
-export class CadastroUsuarioComponent implements OnInit {
-   
-  t : mot = {nome : "", telefone: "", cpf : ""  };
-  usuario : mot;
+export class CadastroUsuarioComponent implements OnInit {  
 
   cols: any[];
 
-  motoristas : mot[] = [];
-
  
-  gravar(){
-    let motorista = [... this.motoristas];
 
-    if(!this.t.nome || !this.t.telefone || !this.t.cpf)
-    {
-      alert("Informe todos os campos");
-      return;
-    }
-    motorista.push(this.t);
-    this.motoristas = motorista;
-    this.t = new mot();   
-  }
+  funcionarios = [];
 
-  constructor() {
+  constructor(private funcionarioService: FuncionarioService) {
     
   }
 
   ngOnInit() {
-    
+    this.consultar();
+
     this.cols = [
       { field: 'nome', header: 'Nome' },
       { field: 'telefone', header: 'Telefone' },
@@ -48,7 +36,18 @@ export class CadastroUsuarioComponent implements OnInit {
   ];
     
   }
-  
+  consultar(){
+    this.funcionarioService.listar().subscribe(dados => this.funcionarios = dados)
+  }
+
+  salvar(frm: FormControl){
+    
+    this.funcionarioService.gravar(frm.value)
+    .subscribe(() => {
+      frm.reset();
+      this.consultar();
+    })
+  }
 
 }
  

@@ -1,67 +1,66 @@
 <div class="container">
- 
-    <div class="col-md-12">
-        
-          <!-- Modal -->
-          
-    <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-    
-          <!-- Modal content-->
-          <div class="modal-content">
-    
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title" style="text-align:left"></h4>
-            </div>
-            <div class="modal-body"> 
-                <form action="" method="POST" ng-controller="gravar">
-                    <div class="form-group">
-                      
-                   <label for="nome">Nome</label>
-                   <input class="form-control" data-mask="00/00/0000" type="text" name="nome" placeholder="Nome" [(ngModel)]="t.nome"><br>
-                   <label>Telefone</label>
-                   <input class="form-control" type="text" name="telefone" placeholder="0000-0000" [(ngModel)]="t.telefone"><br>
-                   <label>CPF</label>
-                   <input class="form-control" type="text" name="cpf" placeholder="Ex: 000.000.000-00" [(ngModel)]="t.cpf"><br><hr>		
 
-                   </div>
-                   </form>
+    <div class="col-md-12">
+
+        <!-- Modal -->
+
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" style="text-align:left"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <form #frm="ngForm" (ngSubmit)="salvar(frm)">
+                            <div class="form-group">
+                                <label for="nome">Nome</label>
+                                <input class="form-control" type="text" name="nome" placeholder="Nome" ngModel><br>
+                                <label>Telefone</label>
+                                <input class="form-control" type="text" name="telefone" placeholder="0000-0000" ngModel><br>
+                                <label>CPF</label>
+                                <input class="form-control" type="text" name="cpf" placeholder="Ex: 000.000.000-00" ngModel><br>
+                                <hr>
+
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" data-dismiss="modal" (click)="salvar(frm)">Gravar</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Sair</button>
+
+                    </div>
+
+                </div>
             </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary" data-dismiss="modal" (click)="gravar()">Gravar</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Sair</button>
-     
-           </div>
-     
-          </div>
-          </div>
-          
-          </div>
-          
+
+        </div>
+
     </div>
- 
-    <div id="cadastro-motorista"> 
-         <button style="width: 100%; " type="button" 
-         class="btn btn-info btn-lg teste" data-toggle="modal"
-          data-target="#myModal">Novo</button>
-        
-        <p-table [value]="motoristas" [paginator]="true" [rows]="3">
+
+
+    <div id="cadastro-motorista">
+        <button style="width: 100%; text-align: center" type="button" class="btn btn-info btn-lg teste" data-toggle="modal" data-target="#myModal">Novo</button>
+
+        <p-table [value]="funcionarios" [paginator]="true" [rows]="15">
             <ng-template pTemplate="header">
-                    <tr [pSelectableRow]="rowData">
-                            <th *ngFor="let col of cols">
-                                {{col.header}}
-                            </th>
-                        </tr>
+                <tr [pSelectableRow]="rowData">
+                    <th *ngFor="let col of cols">
+                        {{col.header}}
+                    </th>
+                </tr>
             </ng-template>
-            <ng-template pTemplate="body" let-rowData let-motoristas >
-                    <tr>
-                            <td *ngFor="let col of cols">
-                                    {{rowData[col.field]}}
-                            </td>
-                        </tr>
+            <ng-template pTemplate="body" let-rowData let-funcionarios>
+                <tr>
+                    <td *ngFor="let col of cols">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
             </ng-template>
-            
+
             <ng-template pTemplate="emptymessage" let-columns>
                 <tr>
                     <td [attr.colspan]="3" style="text-align: center">
@@ -69,5 +68,19 @@
                     </td>
                 </tr>
             </ng-template>
-        </p-table>        
-    </div> 
+        </p-table>
+    </div>
+
+
+    <!--
+    <div class="ui-g">
+        <div class="ui-g-12 cadastro-motorista">
+            <p-dataTable [value]="funcionarios">
+                <p-column field="nome" header="Funcionario "></p-column>
+                <p-column field="telefone" header="Telefone "></p-column>
+                <p-column field="cpf" header="CPF "></p-column>
+            </p-dataTable>
+        </div>
+    </div>
+-->
+</div>
